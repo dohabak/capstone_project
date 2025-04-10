@@ -9,7 +9,8 @@
 .menu {
   width: 100%;
   overflow: hidden;
-  margin: 150px auto;
+  margin: 15px;
+  padding: 0;
 }
 
 .menu > li {
@@ -32,6 +33,7 @@
 .submenu {
   height: 0;
   overflow: hidden;
+  padding: 0;
 }
 
 .menu > li:hover {
