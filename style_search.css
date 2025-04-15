@@ -1,11 +1,11 @@
 .search {
   position: relative;
-  width: 80%;
+  width: 100%;
   text-align: center;
 }
 
 input {
-  width: 100%;
+  width: 80%;
   border: 1px solid #black;
   border-radius: 8px;
   padding: 10px 12px;
