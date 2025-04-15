@@ -9,6 +9,7 @@
   margin-right: auto;
   padding: 0;
   text-align: center;
+  list-style: none;
 }
 
 .menu > li {
