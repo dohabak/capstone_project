@@ -3,8 +3,9 @@
   width:300px;
   background: white;
   border-radius:40px;
-  padding:10px
+  padding:100px
   border:1px solid #f9deec;
+  text-align: center;
 }
 
 .searh-txt{
