@@ -1,0 +1,16 @@
+.menu {
+  width: 50%;
+  overflow: hidden;
+  margin: 15px;
+  padding: 0;
+}
+
+.menu > li {
+  width: 40%;
+  height: 300px;
+  float: left;
+  text-align: center;
+  line-height: 40px;
+  padding: 20px;
+  background-color: #5778ff;
+}
