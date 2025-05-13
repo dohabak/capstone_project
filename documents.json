@@ -1,0 +1,42 @@
+[
+  {
+    "menu": "GMP일반",
+    "submenus": [
+      {
+        "name": "GMP조직/시스템",
+        "page": "h1_a.html",
+        "pdfs": [
+          {
+            "title": "FDA_h1_a",
+            "file": "FDA_h1_a.pdf",
+            "country": "FDA",
+            "step": "h1_a",
+            "date": "2023-06-15"
+          },
+          {
+            "title": "EMA_h1_a",
+            "file": "EMA_h1_a.pdf",
+            "country": "EMA",
+            "step": "h1_a",
+            "date": "2022-04-01"
+          }
+        ]
+      }
+    ]
+    "submenus": [
+      {
+        "name": "품질리스크관리",
+        "page": "h1_b.html",
+        "pdfs": [
+          {
+            "title": "EMA_h1_b",
+            "file": "EMA_h1_b.pdf",
+            "country": "EMA",
+            "step": "h1_b",
+            "date": "2022-04-01"
+          }
+        ]
+      }
+    ]
+  }
+]
