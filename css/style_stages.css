@@ -43,3 +43,14 @@ button:hover {
 button:hover::before {
   transform: scaleX(1);
 }
+
+.d1{
+  text-align: center;
+}
+.t1{
+  display: inline-block;
+}
+.btn1{
+  display: inline-block;
+}
+  
