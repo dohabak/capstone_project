@@ -26,7 +26,7 @@
 }
 
 .submenu > li {
-  line-height: 40px;
+  line-height: 50px;
   background-color: #94a9ff;
 }
 
@@ -42,6 +42,6 @@
 }
 
 .menu > li:hover .submenu {
-  height: 700px;
+  height: 500px;
   transition-duration: 1s;
 }
