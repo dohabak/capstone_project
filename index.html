@@ -33,9 +33,6 @@
     // 문서 목록 렌더링
     function renderResults(query) {
       results.innerHTML = '';
-       if (query.trim() === '') {
-    // 검색어가 없으면 결과를 표시하지 않음
-        return;
       }
       const filtered = documents.filter(doc =>
         doc.title.toLowerCase().includes(query.toLowerCase())
@@ -73,9 +70,6 @@
         console.error('문서 데이터를 불러오는 중 오류 발생:', error);
         results.innerHTML = '<p>문서 데이터를 불러올 수 없습니다.</p>';
       });
-      .then(data => {
-        documents = data;  // renderResults(''); ← 이 줄은 제거 또는 주석 처리
-        })
   </script>
 
   <div class="contents">
