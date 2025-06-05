@@ -23,52 +23,59 @@
 
   <div id="results"></div>
 
-  <script>
-    let documents = [];
+<script>
+  let documents = [];
 
-    const searchBox = document.getElementById('searchBox');
-    const results = document.getElementById('results');
+  const searchBox = document.getElementById('searchBox');
+  const results = document.getElementById('results');
 
-    // 문서 목록 렌더링
-    function renderResults(query) {
-      results.innerHTML = '';
-      const filtered = documents.filter(doc =>
-        doc.title.toLowerCase().includes(query.toLowerCase())
-      );
+  // 문서 목록 렌더링
+  function renderResults(query) {
+    results.innerHTML = '';
 
-      if (filtered.length === 0) {
-        results.innerHTML = '<p>검색 결과가 없습니다.</p>';
-        return;
-      }
-
-      filtered.forEach(doc => {
-        const div = document.createElement('div');
-        div.className = 'document';
-        div.innerHTML = 
-          <a href="${doc.link}" target="_blank">${doc.title}</a><br>
-          <small>${doc.country} | ${doc.date}</small>
-        ;
-        results.appendChild(div);
-      });
+    if (query.trim() === '') {
+      // 검색어가 없으면 결과를 표시하지 않음
+      return;
     }
 
-    // 검색 이벤트 리스너
-    searchBox.addEventListener('input', () => {
-      renderResults(searchBox.value);
-    });
+    const filtered = documents.filter(doc =>
+      doc.title.toLowerCase().includes(query.toLowerCase())
+    );
 
-    // 외부 JSON 불러오기
-    fetch('documents.json')
-      .then(response => response.json())
-      .then(data => {
-        documents = data;
-        renderResults(''); // 초기 전체 목록 표시
-      })
-      .catch(error => {
-        console.error('문서 데이터를 불러오는 중 오류 발생:', error);
-        results.innerHTML = '<p>문서 데이터를 불러올 수 없습니다.</p>';
-      });
-  </script>
+    if (filtered.length === 0) {
+      results.innerHTML = '<p>검색 결과가 없습니다.</p>';
+      return;
+    }
+
+    filtered.forEach(doc => {
+      const div = document.createElement('div');
+      div.className = 'document';
+      div.innerHTML = `
+        <a href="${doc.link}" target="_blank">${doc.title}</a><br>
+        <small>${doc.country} | ${doc.date}</small>
+      `;
+      results.appendChild(div);
+    });
+  }
+
+  // 검색 이벤트 리스너
+  searchBox.addEventListener('input', () => {
+    renderResults(searchBox.value);
+  });
+
+  // 외부 JSON 불러오기
+  fetch('documents.json')
+    .then(response => response.json())
+    .then(data => {
+      documents = data;
+      // 초기에는 아무 것도 렌더링하지 않음
+    })
+    .catch(error => {
+      console.error('문서 데이터를 불러오는 중 오류 발생:', error);
+      results.innerHTML = '<p>문서 데이터를 불러올 수 없습니다.</p>';
+    });
+</script>
+
 
   <div class="contents">
     <div id="stages">
